@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	
+   *1.Почему код дает именно такие результаты?*/
+    var a = 1, b = 3, c, d;
+    c = ++a; console.log(c);           // 2
+    d = b++; console.log(d);           // 1
+    c = (2+ ++a); console.log(c);      // 5
+    d = (2+ b++); console.log(d);      // 4
+    console.log(a);                    // 3
+    console.log(b);     
+    /*Ответ: Думаю потому что,'C' первее идет по алфавиту поэтому число больше чем в 'D' или потому 'C' это предфиксная а 'D' это постфиксная
+
+    /*2.Чему будет равен x?*/
+    var x = 2;
+    var y = 1 + (x *= 2);
+    console.log (y)
+    /*Ответ: будет 5
+    /*3.Объявить две целочисленные переменные — a и b и задать им произвольные начальные значения. Затем написать скрипт, который работает по следующему принципу*/
+
+    var a = +prompt( 'Введите число a' )
+    var b = +prompt( 'Введите число b' )
+     if ( isNaN(a) || isNaN(b) ) {
+         alert( 'Необходимо ввести числа!' );
+}
+     else if ( a >= 0 && b >= 0 ) {
+         alert( a - b );
+}
+     else if ( a < 0 && b < 0) {
+         alert( a * b );
+}
+     else {
+         alert( a + b );
+}
+     alert( result ); 
+   
+   /*4.Присвоить переменной а значение в промежутке [0..15]. С помощью оператора switch организовать вывод чисел от a до 15.*/
+
+   var a,
+    arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+      function input_a () {
+    a = prompt('Введите число от 1 до 15');
+    if (a !== null && (a < 1 || a > 15 || isNaN(a))) {
+        input_a();
+    }
+}
+    input_a();
+  switch(a) {
+    case 1:
+        alert(arr);
+        break;
+    case 15:
+        alert(a);
+        break;
+    null:
+        break;
+    default:
+        alert(arr.slice(a-1));
+}
+    /* 5.Реализовать четыре основные арифметические операции в виде функций с двумя параметрами. Обязательно использовать оператор return.*/
+    function add ( a, b ) { 
+    return a + b;
+}
+    function sub ( a, b ) { 
+    return a - b;
+}
+    function div ( a, b ) { 
+    return a / b;
+}
+    function mul ( a, b ) { 
+    return a * b;
+}
+
+    /*6.Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation), где arg1, arg2 – значения аргументов, operation – строка с названием операции. В зависимости от переданного значения операции выполнить одну из арифметических операций (использовать функции из предыдущего задания) и вернуть полученное значение (использовать switch).*/
+
+    function mathOperation ( arg1, arg2, operation ) { 
+    switch (operation) { 
+        case '+': 
+            return add ( arg1, arg2 ); 
+            break; 
+        case '-': 
+            return sub ( arg1, arg2 ); 
+            break; 
+        case '/': 
+            return div ( arg1, arg2 ); 
+            break; 
+        case '*': 
+            return mul ( arg1, arg2 ); 
+            break; 
+    } 
+} 
+</script>
+</body>
+</html>
